@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kalmar_driver_app/domain/repositories/auth_repository.dart';
-import 'package:kalmar_driver_app/presentation/bloc/auth/auth_event.dart';
-import 'package:kalmar_driver_app/presentation/bloc/auth/auth_state.dart';
+import 'package:kalmar_driver_app/features/auth/domain/repositories/auth_repository.dart';
+import 'package:kalmar_driver_app/features/auth/presentation/bloc/auth_event.dart';
+import 'package:kalmar_driver_app/features/auth/presentation/bloc/auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AuthRepository _authRepository;
@@ -64,4 +64,4 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       emit(AuthError(e.toString()));
     }
   }
-}
+} 

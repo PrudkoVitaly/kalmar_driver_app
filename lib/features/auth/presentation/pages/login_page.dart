@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kalmar_driver_app/presentation/bloc/auth/auth_bloc.dart';
-import 'package:kalmar_driver_app/presentation/bloc/auth/auth_event.dart';
-import 'package:kalmar_driver_app/presentation/bloc/auth/auth_state.dart';
-import 'package:kalmar_driver_app/presentation/widgets/auth/login_form.dart';
+import 'package:kalmar_driver_app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:kalmar_driver_app/features/auth/presentation/bloc/auth_event.dart';
+import 'package:kalmar_driver_app/features/auth/presentation/bloc/auth_state.dart';
+import 'package:kalmar_driver_app/features/auth/presentation/widgets/login_form.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -46,4 +46,4 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
-}
+} 

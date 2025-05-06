@@ -1,20 +1,21 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:kalmar_driver_app/firebase_options.dart';
-import '../di/service_locator.dart';
+import 'package:kalmar_driver_app/core/di/injection_container.dart';
 
 class AppInit {
   static Future<void> init() async {
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
-
-    await ServiceLocator().init();
+    // Инициализация Firebase
+    await Firebase.initializeApp();
     
+    // Запрос разрешений для уведомлений
     final firebaseMessaging = FirebaseMessaging.instance;
-    await firebaseMessaging.requestPermission();
+    await firebaseMessaging.requestPermission(
+      alert: true,
+      badge: true,
+      sound: true,
+    );
     
-    // Инициализируем и сохраняем FCM токен
-    await ServiceLocator().fcmService.initializeFCM();
+    // Инициализация контейнера зависимостей
+    await InjectionContainer().init();
   }
 } 
