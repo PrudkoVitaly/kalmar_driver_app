@@ -2,22 +2,24 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:kalmar_driver_app/presentation/bloc/auth/auth_bloc.dart';
 import 'package:kalmar_driver_app/presentation/bloc/auth/auth_state.dart';
 import 'package:kalmar_driver_app/data/repositories/auth_repository_impl.dart';
+import 'package:kalmar_driver_app/core/services/fcm_service.dart';
 import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'presentation/pages/auth/login_page.dart';
+import 'package:kalmar_driver_app/core/init/app_init.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await AppInit.init();
+  
   final firebaseMessaging = FirebaseMessaging.instance;
-  firebaseMessaging.requestPermission();
-  final fcmToken = await firebaseMessaging.getToken();
-  print("Token - $fcmToken");
+  await firebaseMessaging.requestPermission();
+  
+
   runApp(
     MultiBlocProvider(
       providers: [
