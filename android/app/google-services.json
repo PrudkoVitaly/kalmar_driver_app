@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "463305592509",
+    "project_id": "kalmar-driver-app",
+    "storage_bucket": "kalmar-driver-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463305592509:android:6509c9d21eec0abe62f1d4",
+        "android_client_info": {
+          "package_name": "com.example.kalmar_driver_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxZm9dmAPlJWjX7tAgT4NfrxJ44a_s4po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
